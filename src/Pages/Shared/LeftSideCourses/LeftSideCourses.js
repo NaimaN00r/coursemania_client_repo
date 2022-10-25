@@ -6,7 +6,7 @@ const LeftSideCourses = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect( () =>{
-        fetch('http://localhost:4500/news-categories')
+        fetch('http://localhost:4500/course-categories')
         .then( res => res.json())
         .then(data => setCategories(data));
     }, [])
