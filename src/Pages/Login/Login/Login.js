@@ -7,6 +7,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import { useLocation, useNavigate } from 'react-router';
 import { ButtonGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const { providerLogin } = useContext(AuthContext);
@@ -27,7 +28,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const from = location.state?.from?.pathname || '/login';
+    const from = location.state?.from?.pathname || '/';
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -45,7 +46,7 @@ const Login = () => {
                     navigate(from, {replace: true});
                 }
                 else{
-                    // toast.error('Your email is not verified. Please verify your email address.')
+                    toast.error('Your email is not verified. Please verify your email address.')
                 }
             })
             .catch(error => {

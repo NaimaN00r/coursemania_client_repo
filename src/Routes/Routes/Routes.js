@@ -5,6 +5,7 @@ import CheckOut from "../../Pages/CheckOut/CheckOut";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import Registation from "../../Pages/Login/Registration/Registation";
+import Profile from "../../Pages/Others/Profile/Profile";
 import TermsAndCondition from "../../Pages/Others/TermsAndCondition/TermsAndCondition";
 import Courses from "../../Pages/Shared/Courses/Courses";
 import PrivateRoute from "../Private Route/PrivateRoute";
@@ -15,7 +16,7 @@ export const routes= createBrowserRouter([
         element:<Main></Main>,
         children:[
             {
-                path:'/',
+                path:'/home',
                 element:<Home></Home>,
                 loader: () => fetch('http://localhost:4500/course-categories')
 
@@ -45,6 +46,10 @@ export const routes= createBrowserRouter([
             {
              path:'/terms',
              element:<TermsAndCondition></TermsAndCondition>
+            },
+            {
+                path:'/profile',
+                element:<PrivateRoute><Profile></Profile></PrivateRoute>
             }
         ]
         
