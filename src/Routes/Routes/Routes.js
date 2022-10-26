@@ -5,6 +5,7 @@ import CheckOut from "../../Pages/CheckOut/CheckOut";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import Registation from "../../Pages/Login/Registration/Registation";
+import TermsAndCondition from "../../Pages/Others/TermsAndCondition/TermsAndCondition";
 import Courses from "../../Pages/Shared/Courses/Courses";
 import PrivateRoute from "../Private Route/PrivateRoute";
 
@@ -40,6 +41,10 @@ export const routes= createBrowserRouter([
             {
                 path:'/register',
                 element:<Registation></Registation>
+            },
+            {
+             path:'/terms',
+             element:<TermsAndCondition></TermsAndCondition>
             }
         ]
         
