@@ -53,5 +53,10 @@ export const routes= createBrowserRouter([
             }
         ]
         
-    }
+    },
+    {
+        path:'*',
+        element:<div className='text-center text-red-500 text-4xl mt-20 '>This route is not found</div>
+      }
+
 ])

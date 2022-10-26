@@ -17,6 +17,14 @@ const Header = () => {
             .then(() => { })
             .catch(error => console.error(error))
     }
+
+    function displayUserName(e){
+       document.getElementById('name').innerText=user?.displayName
+    }
+    function displayNothing(){
+        document.getElementById('name').innerText=""
+    }
+
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
@@ -45,11 +53,12 @@ const Header = () => {
                             {
                                 user?.uid ?
                                     <>
-                                        <span>{user?.displayName}</span>
+                                       <p id='name'></p>
                                         <Button variant="light" onClick={handleLogOut}>Log out</Button>
                                     </>
                                     :
                                     <>
+                                    
                                         <Link to='/login'>Login</Link>
                                         <Link to='/register'>Register</Link>
                                     </>
@@ -62,7 +71,11 @@ const Header = () => {
                                 <Image
                                     style={{ height: '30px' }}
                                     roundedCircle
-                                    src={user?.photoURL}>
+                                    src={user?.photoURL} 
+                                    onMouseOver={displayUserName}
+                                    onMouseOut={displayNothing}
+                                    >
+                                   
                                 </Image>
                                 : <FaUser></FaUser>
                             }
