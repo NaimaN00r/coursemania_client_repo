@@ -30,6 +30,7 @@ const Registation = () => {
                 handleUpdateUserProfile(name, photoURL);
                 handleEmailVerification();
                 toast.success('Please verify your email address.')
+                window.location='/courses'
             })
             .catch(e => {
                 console.error(e);

@@ -3,9 +3,10 @@ import { useLoaderData } from 'react-router';
 import Nav from 'react-bootstrap/Nav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import {  Image } from 'react-bootstrap';
+import {  Container, Image } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+
 
 const Category = () => {
     const Cdetails = useLoaderData();
@@ -14,8 +15,8 @@ const Category = () => {
     const {A,B,C,D}=list;
     
     return (
-        <div>
-            <div>
+        <Container>
+            <div class='text-center'>
            <header>
            <Nav className="justify-content-end">
         <Nav.Item>
@@ -25,11 +26,11 @@ const Category = () => {
            </header>
            
                <div>
-                    <h2>{title}</h2>
+                    <p class='text-decoration-underline fw-bold text-warning'>{title}</p>
                     <Image src={image_url} fluid/>
-                    <p>{ttopic}</p>
+                    <p class='fw-bold text-decoration-underline'>{ttopic}</p>
                     <p>{tddetails}</p>
-                    <p>{types}</p>
+                    <p class='fw-bold text-decoration-underline'>{types}</p>
                     <ul>
                         <li>
                             {A}
@@ -47,7 +48,7 @@ const Category = () => {
                </div>
            </div>
            <Button variant="primary"><Link className='text-white' to={`/checkout/${category_id}`}>Get Premimum Eccess</Link></Button>
-        </div>
+        </Container>
     );
 };
 

@@ -5,7 +5,7 @@ import Cardd from '../Shared/Card/Cardd';
 const Home = () => {
     const courses = useLoaderData();
     return (
-        <div>
+        <div  class="row row-cols-lg-2 row-cols-md-1 ">
             {
                 courses.map(course => <Cardd
                     key={course._id}
@@ -13,6 +13,7 @@ const Home = () => {
                 ></Cardd>)
             }
         </div>
+        
     );
 };
 

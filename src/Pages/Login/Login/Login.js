@@ -3,9 +3,9 @@ import { FaGoogle, FaGithub, FaFacebook, FaTwitter, FaWhatsapp, FaTwitch } from 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../../context/authprovider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { useLocation, useNavigate } from 'react-router';
-import { ButtonGroup } from 'react-bootstrap';
+import { ButtonGroup, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
@@ -13,6 +13,7 @@ const Login = () => {
     const { providerLogin } = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider()
+     const gitprovider = new GithubAuthProvider();
 
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
@@ -22,6 +23,16 @@ const Login = () => {
             })
             .catch(error => console.error(error))
     }
+
+    const handlGitSignIn=()=>{
+        providerLogin(gitprovider)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => console.error(error))
+}
+    
 
     const [error, setError] = useState('');
     const { signIn, setLoading } = useContext(AuthContext);
@@ -44,6 +55,7 @@ const Login = () => {
                 setError('');
                 if(user.emailVerified){
                     navigate(from, {replace: true});
+                    window.location='/courses'
                 }
                 else{
                     toast.error('Your email is not verified. Please verify your email address.')
@@ -59,7 +71,8 @@ const Login = () => {
     }
 
     return (
-        <Form onSubmit={handleSubmit}>
+        <Container>
+            <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control name="email" type="email" placeholder="Enter email" required />
@@ -81,11 +94,12 @@ const Login = () => {
       <div className='d-flex '>
       
                 <Button onClick={handleGoogleSignIn}  className='m-2 p-3' variant="outline-dark"> <FaGoogle></FaGoogle> Login with Google</Button>
-                <Button className='p-3 m-2' variant="outline-dark"> <FaGithub></FaGithub> Login with Github</Button>
+                <Button onClick={handlGitSignIn} className='p-3 m-2' variant="outline-dark"> <FaGithub></FaGithub> Login with Github</Button>
       </div>
       <p>Not a member yet?<Link to='/register'>Register</Link></p>
       
     </Form>
+        </Container>
 
     );
 };

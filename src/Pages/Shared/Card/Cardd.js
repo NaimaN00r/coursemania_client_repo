@@ -11,7 +11,6 @@ const Cardd = ({course}) => {
             <Card  style={{ width: '18rem' } } >
           <Card.Img variant="top" src={image_url} />
           <Card.Body>
-            
           <Card.Title><Link to={`/category/${id}`}>{name}</Link></Card.Title>
           </Card.Body>
         </Card>
