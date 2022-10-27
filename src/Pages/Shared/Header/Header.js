@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Button, Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -8,8 +8,23 @@ import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/authprovider/AuthProvider';
 import LeftSideCourses from '../LeftSideCourses/LeftSideCourses';
+import { FAMdLightMode, ImBrightnessContrast } from "react-icons/im";
+import { faDownload, faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './Header.css'
 
 const Header = () => {
+  const [theme, setTheme] = useState('light');
+  const changeMode = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  };
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
     const { user, logOut } = useContext(AuthContext);
 
     const handleLogOut = () => {
@@ -26,6 +41,7 @@ const Header = () => {
     }
 
     return (
+      <div className={`Header ${theme}`}>
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
         <Navbar.Brand href="#home">Course Mania</Navbar.Brand>
@@ -35,18 +51,7 @@ const Header = () => {
             <Nav.Link href="/courses">Courses</Nav.Link>
             <Nav.Link href="#pricing">FAQ</Nav.Link>
             <Nav.Link href="/blog">Blog</Nav.Link>
-            <Nav.Link href="#pricing">light</Nav.Link>
-            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Button onClick={changeMode} variant='light'><FontAwesomeIcon  className='flex-none mr-4' icon={faLightbulb}></FontAwesomeIcon></Button>
           </Nav>
           <Nav>
                         <>
@@ -80,6 +85,7 @@ const Header = () => {
                                 : <FaUser></FaUser>
                             }
                         </Link>
+                        
                     </Nav>
           <div className='d-lg-none'>
             <LeftSideCourses></LeftSideCourses>
@@ -87,6 +93,7 @@ const Header = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </div>
     );
 };
 
