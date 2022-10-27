@@ -3,9 +3,11 @@ import Main from "../../Layout/Main";
 import Blog from "../../Pages/Blog/Blog";
 import Category from "../../Pages/Category/Category/Category";
 import CheckOut from "../../Pages/CheckOut/CheckOut";
+import Faq from "../../Pages/FAQ/Faq";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import Registation from "../../Pages/Login/Registration/Registation";
+import NotFound from "../../Pages/NotFound/NotFound";
 import Profile from "../../Pages/Others/Profile/Profile";
 import TermsAndCondition from "../../Pages/Others/TermsAndCondition/TermsAndCondition";
 import Courses from "../../Pages/Shared/Courses/Courses";
@@ -62,13 +64,17 @@ export const routes= createBrowserRouter([
             {
                 path:'/blog',
                 element:<Blog></Blog>
+            },
+            {
+                path:'/faq',
+                element:<Faq></Faq>
             }
         ]
         
     },
     {
         path:'*',
-        element:<div className='text-center text-red-500 text-4xl mt-20 '>This route is not found</div>
+        element:<NotFound></NotFound>
       }
 
 ])

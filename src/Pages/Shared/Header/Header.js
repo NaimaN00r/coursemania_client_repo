@@ -12,6 +12,7 @@ import { FAMdLightMode, ImBrightnessContrast } from "react-icons/im";
 import { faDownload, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Header.css'
+import logo from '../../../Logo/logo.jpeg'
 
 const Header = () => {
   const [theme, setTheme] = useState('light');
@@ -41,15 +42,16 @@ const Header = () => {
     }
 
     return (
-      <div className={`Header ${theme}`}>
+      <div>
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
+        <img style={{width:50,height:50}} src='https://i.pinimg.com/originals/c2/72/3a/c2723a0519d5ea309c746d40635e09c5.png' alt=''></img>
         <Navbar.Brand href="#home">Course Mania</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/courses">Courses</Nav.Link>
-            <Nav.Link href="#pricing">FAQ</Nav.Link>
+            <Nav.Link href="/faq">FAQ</Nav.Link>
             <Nav.Link href="/blog">Blog</Nav.Link>
             <Button onClick={changeMode} variant='light'><FontAwesomeIcon  className='flex-none mr-4' icon={faLightbulb}></FontAwesomeIcon></Button>
           </Nav>
