@@ -12,11 +12,11 @@ const LeftSideCourses = () => {
     }, [])
     return (
         <div>
-            <h2>Available Courses</h2>
+            <h2 class="ms-2 ps-3 mt-3 mb-3">Available Courses</h2>
             <div>
                 {
                     categories.map(category => <p key={category.id}>
-                        <Link class='text-decoration-none fw-bold' to={`/category/${category.id}`}>{category.name}</Link>
+                        <div class="pt-3 pb-3 ps-0  bg-info bg-opacity-10 border border-info border-width-2 text-center  rounded " style={{width:300}}><Link class='text-decoration-none fw-bold' to={`/category/${category.id}`}>{category.name}</Link></div>
                     </p>)
                 }
             </div>

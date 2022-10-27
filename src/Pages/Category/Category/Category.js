@@ -25,13 +25,13 @@ const Category = () => {
       </Nav>
            </header>
            
-               <div>
-                    <p class='text-decoration-underline fw-bold text-warning'>{title}</p>
-                    <Image src={image_url} fluid/>
-                    <p class='fw-bold text-decoration-underline'>{ttopic}</p>
-                    <p>{tddetails}</p>
-                    <p class='fw-bold text-decoration-underline'>{types}</p>
-                    <ul>
+               <div class="bg-info bg-opacity-10">
+                    <p class='text-decoration-underline fw-bold fs-2 text-warning pt-4'>{title}</p>
+                    <Image style={{weidth:900 , height:500}} src={image_url} fluid/>
+                    <p class='fw-bold text-decoration-underline pt-3 fs-3'>{ttopic}</p>
+                    <p class="ps-4 pe-4">{tddetails}</p>
+                    <p class='fw-bold text-decoration-underline fs-5'>{types}</p>
+                    <ul class="list-group list-group-flush align-items-center">
                         <li>
                             {A}
                         </li>
@@ -46,8 +46,9 @@ const Category = () => {
                         </li>
                     </ul>
                </div>
+               <Button variant="primary"><Link className='text-white' to={`/checkout/${category_id}`}>Get Premimum Eccess</Link></Button>
            </div>
-           <Button variant="primary"><Link className='text-white' to={`/checkout/${category_id}`}>Get Premimum Eccess</Link></Button>
+           
         </Container>
     );
 };

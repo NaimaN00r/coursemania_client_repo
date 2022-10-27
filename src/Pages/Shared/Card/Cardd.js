@@ -8,10 +8,10 @@ const Cardd = ({course}) => {
     const {id,name,image_url}=course;
     return (
         <div>
-            <Card  style={{ width: '18rem' } } >
-          <Card.Img variant="top" src={image_url} />
+            <Card  style={{ width: '18rem'} } >
+          <Card.Img style={{height:'14rem' } }  variant="top" src={image_url} />
           <Card.Body>
-          <Card.Title><Link to={`/category/${id}`}>{name}</Link></Card.Title>
+          <Card.Title><Link class='text-decoration-none text-center ps-5' to={`/category/${id}`}>{name}</Link></Card.Title>
           </Card.Body>
         </Card>
         </div>
