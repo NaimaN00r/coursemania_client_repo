@@ -84,7 +84,7 @@ const Header = () => {
                                     >
                                    
                                 </Image>
-                                : <FaUser></FaUser>
+                                : <FaUser class="icon"></FaUser>
                             }
                         </Link>
                         

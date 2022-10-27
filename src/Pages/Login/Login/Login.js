@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react';
-import { FaGoogle, FaGithub, FaFacebook, FaTwitter, FaWhatsapp, FaTwitch } from "react-icons/fa";
+import { FaGoogle, FaGithub} from "react-icons/fa";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../../context/authprovider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { useLocation, useNavigate } from 'react-router';
-import { ButtonGroup, Container } from 'react-bootstrap';
+import {Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import './Login.css'
 
 const Login = () => {
     const { providerLogin } = useContext(AuthContext);
@@ -71,8 +72,9 @@ const Login = () => {
     }
 
     return (
+        <div class='bg-info bg-opacity-10 ms-5 me-5 mt-5 mb-5 ps-5 pe-5 '>
         <Container>
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} class="align-items-center">
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control name="email" type="email" placeholder="Enter email" required />
@@ -100,6 +102,7 @@ const Login = () => {
       
     </Form>
         </Container>
+        </div>
 
     );
 };

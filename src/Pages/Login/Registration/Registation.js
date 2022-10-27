@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import toast from 'react-hot-toast';
@@ -60,6 +61,8 @@ const Registation = () => {
     }
 
     return (
+        <div class='bg-info bg-opacity-10 ms-5 me-5 mt-5 mb-5 ps-5 pe-5 '>
+            <Container>
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Your Name</Form.Label>
@@ -93,6 +96,8 @@ const Registation = () => {
             </Form.Text>
             <p>Already have an account?<Link to='/login'>Login</Link></p>
         </Form>
+        </Container>
+        </div>
     );
 };
 
