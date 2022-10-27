@@ -74,19 +74,19 @@ const Login = () => {
     return (
         <div class='bg-info bg-opacity-10 ms-5 me-5 mt-5 mb-5 ps-5 pe-5 '>
         <Container>
-            <Form onSubmit={handleSubmit} class="align-items-center">
+            <Form onSubmit={handleSubmit} class="d-flex flex-column align-items-center">
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control name="email" type="email" placeholder="Enter email" required />
+                <Form.Control style={{width:500}} name="email" type="email" placeholder="Enter email" required />
 
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control name="password" type="password" placeholder="Password" required />
+                <Form.Control style={{width:500}} name="password" type="password" placeholder="Password" required />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button style={{width:300}} variant="primary" type="submit">
                 Login
             </Button>
             <Form.Text className="text-danger">

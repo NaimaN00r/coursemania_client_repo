@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Home from '../../Home/Home';
-import Footer from '../Footer/Footer';
 import LeftSideCourses from '../LeftSideCourses/LeftSideCourses';
 
 const Courses = () => {

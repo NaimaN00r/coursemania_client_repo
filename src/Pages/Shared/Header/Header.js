@@ -3,16 +3,14 @@ import { Button, Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/authprovider/AuthProvider';
 import LeftSideCourses from '../LeftSideCourses/LeftSideCourses';
-import { FAMdLightMode, ImBrightnessContrast } from "react-icons/im";
-import { faDownload, faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import {  faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Header.css'
-import logo from '../../../Logo/logo.jpeg'
+
 
 const Header = () => {
   const [theme, setTheme] = useState('light');
@@ -61,13 +59,13 @@ const Header = () => {
                                 user?.uid ?
                                     <>
                                        <p id='name'></p>
-                                        <Button variant="light" onClick={handleLogOut}>Log out</Button>
+                                        <Button variant="light" class="text-dark me-2" onClick={handleLogOut}>Log out</Button>
                                     </>
                                     :
                                     <>
                                     
-                                        <Link to='/login'>Login</Link>
-                                        <Link to='/register'>Register</Link>
+                                        <Link class="text-dark me-2" to='/login'>Login</Link>
+                                        <Link class="text-dark me-2" to='/register'>Register</Link>
                                     </>
                             }
 

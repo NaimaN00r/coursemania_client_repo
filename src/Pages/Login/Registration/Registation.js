@@ -3,7 +3,6 @@ import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import toast from 'react-hot-toast';
-// import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/authprovider/AuthProvider';
 
@@ -63,24 +62,24 @@ const Registation = () => {
     return (
         <div class='bg-info bg-opacity-10 ms-5 me-5 mt-5 mb-5 ps-5 pe-5 '>
             <Container>
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} class="d-flex flex-column align-items-center">
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Your Name</Form.Label>
-                <Form.Control name="name" type="text" placeholder="Your Name" />
+                <Form.Control style={{width:500}} name="name" type="text" placeholder="Your Name" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Photo URL</Form.Label>
-                <Form.Control name="photoURL" type="text" placeholder="Phot URL" />
+                <Form.Control style={{width:500}} name="photoURL" type="text" placeholder="Phot URL" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control name="email" type="email" placeholder="Enter email" required />
+                <Form.Control style={{width:500}} name="email" type="email" placeholder="Enter email" required />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control name="password" type="password" placeholder="Password" required />
+                <Form.Control style={{width:500}} name="password" type="password" placeholder="Password" required />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check
