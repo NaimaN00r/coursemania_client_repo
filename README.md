@@ -1,7 +1,7 @@
 ## Project Name:
 Course Mania
 ## Live website link:
-`https://rainbow-melomakarona-ebe09a.netlify.app/`
+`https://course-mania-f8a8b.web.app/`
 
 ## Github link:
 `https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-NaimaN00r`
