@@ -13,68 +13,68 @@ import TermsAndCondition from "../../Pages/Others/TermsAndCondition/TermsAndCond
 import Courses from "../../Pages/Shared/Courses/Courses";
 import PrivateRoute from "../Private Route/PrivateRoute";
 
-export const routes= createBrowserRouter([
+export const routes = createBrowserRouter([
     {
-        path:'/',
-        element:<Main></Main>,
-        children:[
+        path: '/',
+        element: <Main></Main>,
+        children: [
             {
-                path:'/',
-                element:<Login></Login>
+                path: '/',
+                element: <Login></Login>
             },
             {
-                path:'/courses',
-                element:<Courses></Courses>,
-                loader: () => fetch('http://localhost:4500/course-categories')
+                path: '/courses',
+                element: <Courses></Courses>,
+                loader: () => fetch('https://course-mania-server.vercel.app/course-categories')
             },
             {
-                path:'/home',
-                element:<Home></Home>,
-                
+                path: '/home',
+                element: <Home></Home>,
+
 
             },
             {
-                path:'/category/:id',
-                element:<Category></Category>,
-                loader: ({params}) => fetch(`http://localhost:4500/category/${params.id}`)
+                path: '/category/:id',
+                element: <Category></Category>,
+                loader: ({ params }) => fetch(`https://course-mania-server.vercel.app/category/${params.id}`)
             },
-            
+
             {
-                path:'/checkout/:id',
-                element:<PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:4500/checkout/${params.id}`)
+                path: '/checkout/:id',
+                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://course-mania-server.vercel.app/checkout/${params.id}`)
             },
-            
+
             {
-                path:'/register',
-                element:<Registation></Registation>
-            },
-            {
-                path:'/login',
-                element:<Login></Login>
+                path: '/register',
+                element: <Registation></Registation>
             },
             {
-             path:'/terms',
-             element:<TermsAndCondition></TermsAndCondition>
+                path: '/login',
+                element: <Login></Login>
             },
             {
-                path:'/profile',
-                element:<PrivateRoute><Profile></Profile></PrivateRoute>
+                path: '/terms',
+                element: <TermsAndCondition></TermsAndCondition>
             },
             {
-                path:'/blog',
-                element:<Blog></Blog>
+                path: '/profile',
+                element: <PrivateRoute><Profile></Profile></PrivateRoute>
             },
             {
-                path:'/faq',
-                element:<Faq></Faq>
+                path: '/blog',
+                element: <Blog></Blog>
+            },
+            {
+                path: '/faq',
+                element: <Faq></Faq>
             }
         ]
-        
+
     },
     {
-        path:'*',
-        element:<NotFound></NotFound>
-      }
+        path: '*',
+        element: <NotFound></NotFound>
+    }
 
 ])
